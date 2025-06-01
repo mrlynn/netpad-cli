@@ -3,4 +3,5 @@ node_modules/
 .netpadrc
 .DS_Store 
 CLAUDE.node_modules
+CLAUDE.md
 .env.local

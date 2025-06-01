@@ -18,7 +18,6 @@
         "lib/",
         "templates/",
         "README.md",
-        "CLAUDE.md"
     ],
     "keywords": [
         "netpad",
