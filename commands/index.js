@@ -1,4 +1,7 @@
 const { program } = require('commander');
+const { version } = require('../package.json');
+
+program.version(version);
 
 require('./plugin')(program);
 require('./workflow')(program);

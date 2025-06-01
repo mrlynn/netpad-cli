@@ -1,6 +1,6 @@
 {
   "name": "qr-code-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate QR codes from text, URLs, and data with customizable options",
   "main": "src/runner.js",
   "scripts": {

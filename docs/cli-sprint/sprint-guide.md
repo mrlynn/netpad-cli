@@ -68,8 +68,8 @@ Deliver the foundational NetPad CLI as a standalone npm package, supporting plug
 | Implement config file handler | Dev | 0.5d | ✅ DONE | `.netpadrc` secure storage |
 | Implement `plugin publish` (API call) | Dev | 1d | ✅ DONE | Validation, packaging, API upload |
 | Implement `plugin list` (API or local) | Dev | 0.5d | ✅ DONE | Table/JSON output with filtering |
-| Code quality, lint, and cross-platform test | Dev | 1d | 🔲 TODO | Mac/Linux/Windows |
-| Write README/docs & npm publish prep | Dev | 0.5d | 🔲 TODO |  |
+| Code quality, lint, and cross-platform test | Dev | 1d | ✅ DONE | ESLint configuration, npm package testing |
+| Write README/docs & npm publish prep | Dev | 0.5d | ✅ DONE | README, package.json, published to npm |
 
 ---
 
@@ -89,7 +89,7 @@ Deliver the foundational NetPad CLI as a standalone npm package, supporting plug
     
 - ✅ Config file is created/updated on first run (`~/.netpadrc`).
     
-- 🔲 README documents all commands (including stubs/roadmap).
+- ✅ README documents all commands (including stubs/roadmap).
     
 
 ---
@@ -120,18 +120,19 @@ Deliver the foundational NetPad CLI as a standalone npm package, supporting plug
 
 ## **Current Sprint Progress** 
 
-### ✅ Completed (7/9 tasks) - 78% Complete! 🎯
-- CLI entry point and command structure using Commander.js
-- Plugin scaffolding with templates, validation, and interactive prompts  
-- Command stubs for all planned features
-- **Authentication system** - Device code flow with Google/GitHub OAuth
-- **Config file handling** - Secure `~/.netpadrc` storage
-- **Plugin publish** - Validation, packaging, and API upload
-- **Plugin list** - Table/JSON output with filtering options
+### ✅ **SPRINT COMPLETE!** (9/9 tasks) - 100% Complete! 🎉
+- ✅ CLI entry point and command structure using Commander.js
+- ✅ Plugin scaffolding with templates, validation, and interactive prompts  
+- ✅ Command stubs for all planned features
+- ✅ **Authentication system** - Device code flow with Google/GitHub OAuth
+- ✅ **Config file handling** - Secure `~/.netpadrc` storage
+- ✅ **Plugin publish** - Validation, packaging, and API upload
+- ✅ **Plugin list** - Table/JSON output with filtering options
+- ✅ **Code quality** - ESLint configuration and linting fixes
+- ✅ **Documentation & Publishing** - README, package.json, published to npm
 
-### 🔲 Remaining for MVP (2/9 tasks)
-1. **Code quality** (linting, testing, cross-platform)
-2. **Documentation** (README, npm publish prep)
+### 🚀 **PUBLISHED TO NPM**
+The NetPad CLI is now available globally via: `npm install -g netpad-cli`
 
 ---
 

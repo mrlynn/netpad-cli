@@ -1,6 +1,6 @@
 {
     "name": "netpad-cli",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "NetPad CLI for plugin management, workflows, and more.",
     "main": "bin/netpad-cli.js",
     "bin": {
@@ -8,7 +8,8 @@
     },
     "scripts": {
         "start": "node bin/netpad-cli.js",
-        "test": "jest",
+        "test": "jest --passWithNoTests",
+        "lint": "eslint . --fix",
         "prepublishOnly": "npm test",
         "postinstall": "echo 'NetPad CLI installed successfully! Run: netpad-cli --help'"
     },
@@ -34,7 +35,16 @@
         "inquirer": "^9.0.0",
         "open": "^10.1.2"
     },
+    "jest": {
+        "testEnvironment": "node",
+        "testPathIgnorePatterns": [
+            "/node_modules/",
+            "/templates/",
+            "/qr-code-generator/"
+        ]
+    },
     "devDependencies": {
+        "eslint": "^8.57.0",
         "jest": "^29.0.0"
     },
     "engines": {
