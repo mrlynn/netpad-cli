@@ -1,7 +1,7 @@
 {
   "name": "qr-code-generator",
   "id": "netpadteam.qr-code-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "QR Code Generator",
   "description": "Generate QR codes from text, URLs, and data with customizable options",
   "author": {
