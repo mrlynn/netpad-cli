@@ -22,12 +22,23 @@ module.exports = (program) => {
         .command('publish [path]')
         .description('Publish a plugin to NetPad')
         .option('--dry-run', 'Validate plugin without publishing')
+        .option('--debug', 'Show detailed debug information')
+        .option('--verbose', 'Show verbose output (alias for --debug)')
         .action(async (pluginPath, options) => {
             try {
                 const targetPath = path.resolve(pluginPath || '.');
+                const isDebug = options.debug || options.verbose;
         
                 console.log(chalk.blue('📤 NetPad Plugin Publisher\n'));
                 console.log(chalk.gray(`Plugin path: ${targetPath}`));
+                
+                if (isDebug) {
+                    console.log(chalk.cyan('\n🔍 Debug Information:'));
+                    console.log(chalk.gray(`Working directory: ${process.cwd()}`));
+                    console.log(chalk.gray(`Resolved path: ${targetPath}`));
+                    console.log(chalk.gray(`Dry run: ${!!options.dryRun}`));
+                    console.log(chalk.gray(`Debug mode: ${isDebug}`));
+                }
 
                 // Check authentication
                 if (!auth.isAuthenticated()) {
@@ -39,13 +50,22 @@ module.exports = (program) => {
                 if (options.dryRun) {
                     console.log(chalk.yellow('🧪 Dry run mode - validation only\n'));
           
-                    const validation = await pluginPublisher.validatePlugin(targetPath);
+                    const validation = await pluginPublisher.validatePlugin(targetPath, isDebug);
           
                     if (validation.isValid) {
                         console.log(chalk.green('\n✅ Plugin is valid and ready to publish!'));
                         console.log(chalk.gray(`Plugin: ${validation.manifest.displayName}`));
                         console.log(chalk.gray(`Version: ${validation.manifest.version}`));
                         console.log(chalk.gray(`Size: ${Math.round(validation.pluginSize / 1024)}KB`));
+                        
+                        if (isDebug) {
+                            console.log(chalk.cyan('\n🔍 Validation Details:'));
+                            console.log(chalk.gray(`Manifest ID: ${validation.manifest.id}`));
+                            console.log(chalk.gray(`Author: ${validation.manifest.author?.name || 'Unknown'}`));
+                            console.log(chalk.gray(`Category: ${validation.manifest.category}`));
+                            console.log(chalk.gray(`Scope: ${validation.manifest.scope}`));
+                            console.log(chalk.gray(`Files validated: ${Object.keys(validation.manifest.files || {}).length}`));
+                        }
                     } else {
                         console.log(chalk.red('\n❌ Plugin validation failed:'));
                         validation.errors.forEach(error => console.log(chalk.red(`  • ${error}`)));
@@ -53,7 +73,7 @@ module.exports = (program) => {
                     }
                 } else {
                     // Full publish
-                    await pluginPublisher.publishFromPath(targetPath);
+                    await pluginPublisher.publishFromPath(targetPath, isDebug);
           
                     console.log(chalk.green('\n🎉 Plugin published successfully!'));
                     console.log(chalk.yellow('\n💡 Next steps:'));
