@@ -1,6 +1,6 @@
 {
     "name": "netpad-cli",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "NetPad CLI for plugin management, workflows, and more.",
     "main": "bin/netpad-cli.js",
     "bin": {
