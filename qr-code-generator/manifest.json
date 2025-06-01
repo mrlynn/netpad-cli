@@ -1,0 +1,48 @@
+{
+  "name": "qr-code-generator",
+  "id": "netpadteam.qr-code-generator",
+  "version": "1.0.0",
+  "displayName": "QR Code Generator",
+  "description": "Generate QR codes from text, URLs, and data with customizable options",
+  "author": {
+    "name": "NetPad Team",
+    "email": "team@netpad.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "qr",
+    "qrcode", 
+    "generator",
+    "barcode",
+    "utility",
+    "netpad",
+    "plugin"
+  ],
+  "category": "utility",
+  "scope": "public",
+  "permissions": {
+    "network": [],
+    "environment": [],
+    "files": []
+  },
+  "nodeConfig": {
+    "gradientColors": [
+      "#22c55e",
+      "#16a34a"
+    ],
+    "primaryColor": "#22c55e",
+    "badgeText": "QR",
+    "description": "Generate QR codes from text, URLs, and data with customizable options",
+    "category": "utility",
+    "icon": "🔗"
+  },
+  "dependencies": {},
+  "files": {
+    "runner": "./src/runner.js",
+    "shape": "./src/shape.js",
+    "icon": "./src/icon.svg"
+  },
+  "engines": {
+    "netpad": ">=1.0.0"
+  }
+}

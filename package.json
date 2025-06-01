@@ -1,0 +1,52 @@
+{
+    "name": "netpad-cli",
+    "version": "0.1.0",
+    "description": "NetPad CLI for plugin management, workflows, and more.",
+    "main": "bin/netpad-cli.js",
+    "bin": {
+        "netpad-cli": "bin/netpad-cli.js"
+    },
+    "scripts": {
+        "start": "node bin/netpad-cli.js",
+        "test": "jest",
+        "prepublishOnly": "npm test",
+        "postinstall": "echo 'NetPad CLI installed successfully! Run: netpad-cli --help'"
+    },
+    "files": [
+        "bin/",
+        "commands/",
+        "lib/",
+        "templates/",
+        "README.md",
+        "CLAUDE.md"
+    ],
+    "keywords": [
+        "netpad",
+        "plugin",
+        "cli",
+        "scaffolding",
+        "workflow"
+    ],
+    "author": "NetPad Team",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "commander": "^11.0.0",
+        "inquirer": "^9.0.0",
+        "open": "^10.1.2"
+    },
+    "devDependencies": {
+        "jest": "^29.0.0"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mrlynn/netpad-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mrlynn/netpad-cli/issues"
+    },
+    "homepage": "https://netpad.io"
+}
